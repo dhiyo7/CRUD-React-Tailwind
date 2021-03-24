@@ -36,7 +36,7 @@ const AddOnByID = (props) => {
 
   useEffect(() => {
     getAddByID(id);
-  }, [id]);
+  },[] );
 
   return (
     <>
