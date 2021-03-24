@@ -95,7 +95,6 @@ const LoginComponent = () => {
 
                   <div className="text-sm">
                     <p
-                      href="#"
                       className="font-medium text-red-600 hover:text-indigo-500"
                     >
                       Forgot your password?

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
@@ -32,6 +32,22 @@ const Category = () => {
       });
   };
 
+  const handleDelete = (id) => {
+    axios
+      .delete(`${getUrl}/addon-category/${id}`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((res) => {
+        console.log("Berhasil delete ", res);
+        getCategory();
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
+  };
+
   useEffect(() => {
     getCategory();
   }, []);
@@ -49,6 +65,11 @@ const Category = () => {
               Halaman Category List.
             </p>
           </div>
+          <Link to="/addcategory">
+            <button class="mb-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              Add Data Category
+            </button>
+          </Link>
           <div className="flex flex-wrap -m-2">
             {category.map(({ id, name, type }) => {
               return (
@@ -63,29 +84,31 @@ const Category = () => {
                     <span class="inline-flex">
                       <Link
                         className="ml-2"
-                        // to={{
-                        //   pathname: `/edit-addon/${id}`,
-                        //   addOns,
-                        // }}
+                        to={{
+                          pathname: `/editcategory/${id}`,
+                          id,
+                          name,
+                          type,
+                        }}
                       >
                         {" "}
                         <p className="text-green-600">Edit</p>
                       </Link>
                       <Link
                         className="ml-2"
-                        // to={{
-                        //   pathname: `/view/${id}`,
-                        //   addOns,
-                        // }}
+                        to={{
+                          pathname: `/viewcategory/${id}`,
+                          category,
+                        }}
                       >
                         {" "}
                         <p className="text-blue-600">View</p>
                       </Link>
 
                       <button
-                        // onClick={() => {
-                        //   handleDelete(id);
-                        // }}
+                        onClick={() => {
+                          handleDelete(id);
+                        }}
                         class="ml-2 inline-flex text-red-500 border-0 focus:outline-none hover:bg-red-200 rounded "
                       >
                         Delete
