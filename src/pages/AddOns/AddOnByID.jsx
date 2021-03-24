@@ -35,8 +35,8 @@ const AddOnByID = (props) => {
   };
 
   useEffect(() => {
-    getAddByID(id);
-  },[] );
+    getAddByID();
+  },[id] ); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

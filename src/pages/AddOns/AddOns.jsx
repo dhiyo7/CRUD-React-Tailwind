@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 
 const getUrl = process.env.REACT_APP_URL;
 
-const AddOns = () => {
+const AddOns =  () => {
   const history = useHistory();
   const token = useSelector((state) => state.auth.data.access_token);
   const [addOns, setAddOns] = useState([]);
@@ -49,7 +49,7 @@ const AddOns = () => {
 
   useEffect(() => {
     getAddOns();
-  }, []);
+  }, [addOns]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

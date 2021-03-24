@@ -41,7 +41,7 @@ const NewCategory = () => {
         <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div class="lg:w-full md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
             <h2 class="text-gray-900 text-lg font-medium title-font mb-5">
-              Edit Category
+              Add Category
             </h2>
             <div class="relative mb-4">
               <label for="name" class="leading-7 text-sm text-gray-600">

@@ -29,7 +29,7 @@ const CategoryByID = (props) => {
     
       useEffect(() => {
         getCategoryByID(id);
-      }, [id]);
+      }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>

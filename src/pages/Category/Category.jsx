@@ -50,7 +50,7 @@ const Category = () => {
 
   useEffect(() => {
     getCategory();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
