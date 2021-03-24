@@ -1,4 +1,4 @@
-# Line Today Clone With React
+# CRUD-React-Tailwind
 
 ## About the project
 
